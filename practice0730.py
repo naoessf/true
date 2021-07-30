@@ -39,10 +39,13 @@ x0 = position[2]
 y0 = position[1]
 
 #Target Direction
-d1 = m.atan((y0 - y1)/(x0 - x1)) - 180
-d2 = m.atan((y1 - y0)/(x1 - x0))
-d3 = m.atan((y1 - y0)/(x1 - x0))
-d4 = m.atan((y0 - y1)/(x0 - x1)) + 180 
+d1 = m.atan((y0 - y1)/(x0 - x1)) - 270
+d1 = abs(d1)
+d2 = m.atan((y1 - y0)/(x1 - x0)) - 270
+d2 = abs(d2)
+d3 = 90 - m.atan((y1 - y0)/(x1 - x0))
+d4 = m.atan((y0 - y1)/(x0 - x1)) - 180 
+d4 = abs(d4)
 
 #Ship Direction
 ds = position[3]
@@ -50,27 +53,27 @@ ds = position[3]
 #First quadrant
 if x0 > x1 and y0 > y1 :
     if ds > d1 :
-        pass
-    elif ds < d1 :
-        pass
+        Left
+    else :
+        Right
 
 #Second quadrant
 elif x0 < x1 and y0 > y1 :
     if ds > d2:
-        pass
-    elif ds < d2:
-        pass
+        Left
+    else :
+        Right
 
 #Third quadrant
 elif x0 < x1 and y0 < y1 :
     if ds > d3 :
         Left
-    elif ds < d3 :
+    else :
         Right
 
 #Fourth quadrant
-elif x0 > x1 and y0 < y1 :
+else :
     if ds > d4 :
-        pass
-    elif ds < d4 :
-        pass
+        Left
+    else :
+        Right
