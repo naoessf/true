@@ -75,8 +75,14 @@ elif x0 < x1 and y0 < y1 :
         Right
 
 #Fourth quadrant
-else : # x0 > x1 and y0 < y1
+elif x0 > x1 and y0 < y1 :
     if ds > d4 :
         Left
     else : # ds < d4
         Right
+
+#Finish
+elif x0 = x1 and y0 = y1 :
+    svmot.stop()
+    dcmot.stop()
+    GPIO.cleanup()
