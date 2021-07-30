@@ -41,9 +41,12 @@ y0 = position[1]
 #Target Direction
 d1 = m.atan((y0 - y1)/(x0 - x1)) - 270
 d1 = abs(d1)
+
 d2 = m.atan((y1 - y0)/(x1 - x0)) - 270
 d2 = abs(d2)
+
 d3 = 90 - m.atan((y1 - y0)/(x1 - x0))
+
 d4 = m.atan((y0 - y1)/(x0 - x1)) - 180 
 d4 = abs(d4)
 
@@ -54,26 +57,26 @@ ds = position[3]
 if x0 > x1 and y0 > y1 :
     if ds > d1 :
         Left
-    else :
+    else : # ds < d1
         Right
 
 #Second quadrant
 elif x0 < x1 and y0 > y1 :
     if ds > d2:
         Left
-    else :
+    else : # ds < d2
         Right
 
 #Third quadrant
 elif x0 < x1 and y0 < y1 :
     if ds > d3 :
         Left
-    else :
+    else : # ds < d3
         Right
 
 #Fourth quadrant
-else :
+else : # x0 > x1 and y0 < y1
     if ds > d4 :
         Left
-    else :
+    else : # ds < d4
         Right
