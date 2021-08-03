@@ -63,30 +63,30 @@ sc = (1.5 / 180)
 
 #First quadrant
 if x0 >= x1 and y0 > y1 :
-    if ds >= d1 :
+    if ds >= d1 : #Left
         svmot.ChangeDutyCycle((sc * c1) + 7.5)
-    else : # ds < d1
+    else : # ds < d1(Right)
         svmot.ChangeDutyCycle(7.5 - (sc * c1))
 
 #Second quadrant
 elif x0 < x1 and y0 >= y1 :
-    if ds >= d2:
+    if ds >= d2: #Left
         svmot.ChangeDutyCycle((sc * c2) + 7.5)
-    else : # ds < d2
+    else : # ds < d2(Right)
         svmot.ChangeDutyCycle(7.5 - (sc * c2))
 
 #Third quadrant
 elif x1 >= x0 and y0 < y1 :
-    if ds >= d3 :
+    if ds >= d3 : #Left
         svmot.ChangeDutyCycle((sc * c3) + 7.5)
-    else : # ds < d3
+    else : # ds < d3(Right)
         svmot.ChangeDutyCycle(7.5 - (sc * c3))
 
 #Fourth quadrant
 elif x0 > x1 and y1 >= y0 :
-    if ds >= d4 :
+    if ds >= d4 : #Left
         svmot.ChangeDutyCycle((sc * c4) + 7.5)
-    else : # ds < d4
+    else : # ds < d4(Right)
         svmot.ChangeDutyCycle(7.5 - (sc * c4))
 
 #Finish
