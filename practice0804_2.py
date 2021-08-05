@@ -63,7 +63,7 @@ while i <= len(lat_list) :
             #First quadrant
             if x1 >= x0 and y1 > y0 :
                 if ds >= d1 :
-                svmot.ChangeDutyCycle((sc * c1) + 7.5)  
+                    svmot.ChangeDutyCycle((sc * c1) + 7.5)  
                 else :
                     svmot.ChangeDutyCycle(7.5 - (sc * c1))
 
