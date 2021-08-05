@@ -29,9 +29,9 @@ y0 = position[1]
 #Error Range
 e = 0.04166667
 
-i = 0
+i = 1
 
-while i < len(lat_list) :
+while i = len(lat_list) :
     #Destination Point
     x1 = lon_list[i]
     y1 = lat_list[i]
